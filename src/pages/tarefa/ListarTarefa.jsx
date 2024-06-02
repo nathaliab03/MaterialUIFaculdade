@@ -83,10 +83,15 @@ const ListarTarefa = () => {
 
     return(
     <>
-    <Card>
+    <Card sx={{backgroundColor: '#f0f8ff' }}>
         <CardHeader
           title="Tarefas"
           subheader="Listagem de Tarefas"
+          sx={{ textAlign: 'center',
+          '.MuiCardHeader-title': {
+            fontFamily: 'cursive',
+          },
+           }}
         /> 
         <CardContent>
             <TableContainer component={Paper}>
@@ -122,10 +127,10 @@ const ListarTarefa = () => {
                       <TableCell align="right">{row.statusTarefa}</TableCell>
                       <TableCell align="right">{row.recursoTarefa}</TableCell>
                       <TableCell align="center">
-                        <Button variant="contained" color="success" onClick={() => handleEditar(row.idTarefa)}><EditIcon fontSize="small" /></Button>            
+                        <Button variant='outlined' color='info' fullWidth='true' onClick={() => handleEditar(row.idTarefa)}><EditIcon fontSize="small" /></Button>            
                       </TableCell>
                       <TableCell align="center">
-                        <Button variant="contained" color="error" onClick={() => handleDeletar(row.idTarefa)}><DeleteIcon fontSize="small" /></Button>            
+                        <Button variant="outlined" color="error" fullWidth='true' onClick={() => handleDeletar(row.idTarefa)}><DeleteIcon fontSize="small" /></Button>            
                       </TableCell>
                     </TableRow>
                 ))}
@@ -134,8 +139,8 @@ const ListarTarefa = () => {
             </TableContainer>
         </CardContent>
         <CardActions>
-            <Button size="small" variant="contained" onClick={handleOpen}>Criar Tarefa</Button>
-            <Button size="small" variant="outlined">Cancelar</Button>
+            <Button size="medium" color='primary' variant="contained" fullWidth='true' onClick={handleOpen}>Criar Tarefa</Button>
+            <Button size="medium" color='inherit' variant="contained" fullWidth='true'>Cancelar</Button>
       </CardActions> 
     </Card>
     <div>
